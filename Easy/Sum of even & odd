@@ -1,0 +1,18 @@
+import java.util.* ;
+import java.io.*; 
+
+public class Solution {
+
+	public static int[] sumOfEvenOdd(long num, int evenSum, int oddSum) {
+		int ans[]=new int[2];
+		while(num>0)
+		{
+		 if((num%10)%2==0)
+		  ans[0]+=num%10;
+		 else
+		  ans[1]+=num%10;
+		  num/=10;
+		}
+		return ans;
+	}
+}
