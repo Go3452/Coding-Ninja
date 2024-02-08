@@ -1,0 +1,7 @@
+public class Solution {
+
+	public static String replaceCharacter(String input, char c1, char c2) {
+		input=input.replace(c1, c2);
+		return input;
+	}
+}
