@@ -1,0 +1,16 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static void printPattern(int n){
+		String ans="";
+		for(int i=0;i<n;i++)
+		{
+		 for(int j=0;j<n-i-1;j++)
+		  ans+=" ";
+		 for(int j=0;j<=2*i;j++)
+		  ans+="*";
+		 System.out.println(ans);
+		 ans="";
+		}
+	}
+}
