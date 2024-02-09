@@ -1,0 +1,17 @@
+public class Solution {
+    public static int upperBound(int []arr, int x, int n){
+      int i=0,j=n-1,ind=n,mid;
+      while(i<=j)
+      {
+       mid=(i+j)/2;
+       if(x<arr[mid])
+       {
+        ind=mid;
+        j=mid-1;
+       }
+       else
+        i=mid+1;
+      }
+      return ind;
+    }
+}
