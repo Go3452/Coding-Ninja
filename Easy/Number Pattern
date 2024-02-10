@@ -1,0 +1,21 @@
+import java.util.* ;
+import java.io.*; 
+
+public class Solution {
+	public static String[] NumberPattern(int i) {
+		String ans="";
+		String s[]=new String[i];
+       for(int j=i,c=0;j>=1;j--,c++)
+	   {
+	    for(int k=1;k<=j;k++)
+		{
+		 String S=Integer.toString(k);
+         ans+=S;
+		}
+		s[c]=ans;
+		ans="";
+	   }
+	   return s;
+	}
+
+}
