@@ -1,0 +1,20 @@
+import java.util.Arrays;
+public class Solution{
+    public static int missingNumber(int n, int []arr){
+        Arrays.sort(arr);
+        int count=1,num=arr[0];
+        for(int i=1;i<n;i++)
+        {
+         if(num==arr[i])
+          count++;
+         else
+         {
+          if(count%2==1)
+           break;
+          num=arr[i];
+          count=1;
+         }
+        }
+       return num;
+    }
+}
