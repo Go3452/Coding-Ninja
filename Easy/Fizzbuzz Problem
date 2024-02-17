@@ -1,0 +1,17 @@
+public class Solution {
+    public static String[] helloWorld(int N) {
+        String S[] = new String[N];
+        for(int i=0,j=i+1;i<N;i++,j++)
+        {
+         if(j%3==0&&j%5==0)
+          S[i]="HelloWorld";
+         else if(j%3==0)
+          S[i]="Hello";
+         else if(j%5==0)
+          S[i]="World";
+         else
+          S[i]=Integer.toString(j);
+        } 
+        return S;
+    }
+}
