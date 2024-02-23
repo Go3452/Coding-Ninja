@@ -1,0 +1,22 @@
+import java.util.* ;
+import java.io.*; 
+
+public class Solution {
+	public static String[] NumberPattern(int n) {
+		String arr[] = new String[n];
+		int count=1;
+		for(int i=0;i<n;i++)
+		{
+		 String ans="";
+		 for(int j=0;j<=i;j++)
+		 {
+		  ans+=Integer.toString(count);
+		  count++;
+		 }
+		 count-=i;
+		 arr[i]=ans;
+		}
+		return arr;
+	}
+
+}
