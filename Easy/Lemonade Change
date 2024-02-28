@@ -1,0 +1,32 @@
+public class Solution {
+    public static boolean lemonadeChange(int []bill) {
+        int c5=0,c10=0,c20=0;
+        for(int i=0;i<bill.length;i++)
+        {
+         if(bill[i]==5)
+          c5++;
+         else if(bill[i]==10)
+         {
+          if(c5==0)
+           return false;
+          c5--;
+          c10++;
+         }
+         else
+         {
+          if(c10>=1&&c5>=1)
+          {
+           c10--;
+           c5--;
+          }
+          else if(c5>=3)
+          {
+           c5-=3;
+          }
+          else 
+           return false;
+         }
+        }
+        return true;
+    }
+}
