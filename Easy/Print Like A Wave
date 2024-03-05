@@ -1,0 +1,25 @@
+import java.util.* ;
+import java.io.*; 
+
+public class Solution {
+	public static int[] wavePrint(int arr[][], int nRows, int mCols) {
+		int []ar=new int[nRows*mCols];
+		int k=0;
+		for(int i=0;i<mCols;i++)
+		{
+		 if(i%2==0)
+		 {
+		  for(int j=0;j<nRows;j++,k++)
+		   ar[k]=arr[j][i];
+		 }
+		 else
+		 {
+          for(int j=nRows-1;j>=0;j--,k++)
+		   ar[k]=arr[j][i];
+		 }
+		}
+		return ar;
+	}
+}
+
+
