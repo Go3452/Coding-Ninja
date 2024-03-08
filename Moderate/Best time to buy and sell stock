@@ -1,0 +1,17 @@
+public class Solution {
+    public static int bestTimeToBuyAndSellStock(int []prices) {
+        int maxdiff=0,diff=0,min=prices[0];
+        for(int i=1;i<prices.length;i++)
+        {
+         if(min>prices[i])
+          min=prices[i];
+         else
+         {
+          diff=prices[i]-min;
+          if(diff>maxdiff)
+           maxdiff=diff;
+         }
+        }
+        return maxdiff;
+    }
+}
