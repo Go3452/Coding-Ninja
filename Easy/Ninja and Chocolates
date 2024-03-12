@@ -1,0 +1,11 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    static int chocPrice(int n) {
+        long ans=n*10;
+        int num=n/5;
+        long an=num*48;
+        ans-=an;
+        return (int)ans;
+    }
+}
