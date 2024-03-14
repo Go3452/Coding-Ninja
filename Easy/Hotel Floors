@@ -1,0 +1,15 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+  public static int hotelBookings(List<String> queries)
+  {
+   int coin=0;
+   for(int i=0;i<queries.size();i++)
+   {
+    String s=queries.get(i);
+    if(s.charAt(0)=='+')
+     coin++;
+   }
+   return coin;
+  }
+}
