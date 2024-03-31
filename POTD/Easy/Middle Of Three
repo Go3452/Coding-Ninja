@@ -1,0 +1,10 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int middleOfThree(int x, int y, int z) {
+		int max=x>y?(x>z?x:z):(y>z?y:z);
+		int min=x<y?(x<z?x:z):(y<z?y:z);
+		int ans=x+y+z-max-min;
+		return ans;
+	}
+}
