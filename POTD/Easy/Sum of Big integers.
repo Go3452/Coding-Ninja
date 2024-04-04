@@ -1,0 +1,55 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static String findSum(String num1 , String num2)  {
+		String ans="";
+		int carry=0;
+		for(int i=num1.length()-1,j=num2.length()-1;i>=0||j>=0;)
+		{
+		 if(i>=0&&j>=0)
+		 {
+		  int num=num1.charAt(i)+num2.charAt(j)-'0'-'0'+carry;
+		  if(num>9)
+		  {
+			carry=num/10;
+            num=num%10;
+		  }
+		  else
+		   carry=0;
+		  ans = (char)(num+'0') + ans;
+		  i--;j--;
+		 }
+		 else if(i>=0)
+		 {
+		  int num=num1.charAt(i)-'0'+carry;
+		  if(num>9)
+		  {
+			carry=num/10;
+            num=num%10;
+		  }
+		  else
+		   carry=0;
+		  ans = (char)(num+'0') + ans;
+		  i--;
+		 }
+		 else
+		 {
+		  int num=num2.charAt(j)-'0'+carry;
+		  if(num>9)
+		  {
+			carry=num/10;
+            num=num%10;
+		  }
+		  else
+		   carry=0;
+		  ans = (char)(num+'0') + ans;
+		  j--;
+		 }
+		}
+		if(carry>0)
+		{
+		 ans = (char)(carry+'0') + ans;
+		}
+		return ans;
+	}
+}
