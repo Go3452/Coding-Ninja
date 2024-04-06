@@ -1,0 +1,28 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int[] closestPerfectSquare(int n) {
+      int i=1;
+      while(i*i<=n)
+       i++;
+     int j=i-1;
+     int ans[] = new int[2];
+     if(j*j==n)
+     {
+      ans[0]=n;ans[1]=0;
+      return ans;
+     }
+     int dis1=i*i-n;
+     int dis2=n-j*j;
+     if(dis1<dis2)
+     {
+      ans[0]=i*i;ans[1]=dis1;
+      return ans;
+     }
+     else
+     {
+      ans[0]=j*j;ans[1]=dis2;
+      return ans;
+     }
+    }
+}
