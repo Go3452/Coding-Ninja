@@ -1,0 +1,8 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static long firstN(int n) {
+		long ans = (long)(n)*(long)(n+1)/2;
+		return ans;
+	}
+}
