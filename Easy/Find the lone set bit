@@ -1,0 +1,23 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int findSetBit(int n) {
+		int count=0,pos=-1,set=0;
+		while(n>0)
+		{
+		 count++;
+		 if(n%2==1)
+		 {
+		  if(set==0)
+		  {
+			pos=count;
+			set++;
+		  }
+		  else
+		   return -1;
+		 }
+		 n/=2;
+		}
+		return pos;
+	}
+}
