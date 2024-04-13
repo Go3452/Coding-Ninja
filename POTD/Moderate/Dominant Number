@@ -1,0 +1,33 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int dominantNumber(int[] arr, int n) {
+		 Arrays.sort(arr);
+		 int freq=1,maxfreq=1,ele=arr[0],num=arr[0];
+		 for(int i=1;i<n;i++)
+		 {
+		  if(num==arr[i])
+		   freq++;
+		  else
+		  {
+			if(freq>maxfreq)
+			{
+			 maxfreq=freq;
+			 ele=num;
+			}
+			freq=1;
+			num=arr[i];
+		  }
+		 }
+		 if(freq>maxfreq)
+		 {
+		  maxfreq=freq;
+		  ele=num;
+		 }
+		 int numm=n/3;
+		 if(maxfreq>numm)
+		  return ele;
+		 return -1;
+	}
+}
+
