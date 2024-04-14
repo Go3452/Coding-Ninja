@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+public class Solution {
+	public static void pushZerosAtEnd(ArrayList<Integer> arr)
+	{
+	 int c=0,n=arr.size();
+	 int i=0,j=0;
+	 for(;j<n;)
+	 {
+	  if(arr.get(j)!=0)
+	  {
+       arr.set(i,arr.get(j));
+	   i++;j++;
+	  }
+	  else
+	   j++;
+	 }
+	 for(;i<n;i++)
+	  arr.set(i,0);
+	}
+}
