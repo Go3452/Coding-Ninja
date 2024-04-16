@@ -1,0 +1,11 @@
+public class Solution {
+    public static long getMaximumProfit (int n, long[] values) {
+        long ans=0;
+        for(int i=0;i<n-1;i++)
+        {
+         if(values[i]<values[i+1])
+          ans+=values[i+1]-values[i];
+        }
+        return ans;
+    }
+}
