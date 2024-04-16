@@ -1,0 +1,31 @@
+public class Solution {
+    public static long getTrappedWater(long []arr, int n) {
+        long []pre = new long[n];
+        long []suf = new long[n];
+        pre[0]=arr[0];
+        suf[n-1]=arr[n-1];
+        for(int i=1;i<n;i++)
+        {
+         if(pre[i-1]>arr[i])
+          pre[i]=pre[i-1];
+         else
+          pre[i]=arr[i];
+        }
+        for(int i=n-2;i>=0;i--)
+        {
+         if(suf[i+1]>arr[i])
+          suf[i]=suf[i+1];
+         else
+          suf[i]=arr[i];
+        }
+        long water=0;
+        for(int i=0;i<n;i++)
+        {
+         long min=pre[i]<suf[i]?pre[i]:suf[i];
+         min-=arr[i];
+         if(min>0)
+          water+=min;
+        }
+        return water;
+    }
+}
