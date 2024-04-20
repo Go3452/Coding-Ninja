@@ -1,0 +1,16 @@
+public class Solution {
+    static boolean isKthBitSet(int n, int k) {
+        int count=0;
+        while(n>0)
+        {
+         count++;
+         if(count==k)
+         {
+          if((n%2)==1)
+           return true;
+         }
+         n/=2;
+        }
+        return false;
+    }
+}
