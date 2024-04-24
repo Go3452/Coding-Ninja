@@ -1,0 +1,21 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution{ 
+    public static int fishEater(int[] fishes) {
+        int i=0,n=fishes.length,count=fishes.length;
+        for(int j=1;j<n;)
+        {
+         if(fishes[i]<=fishes[j])
+         {
+          i=j;
+          j++;
+         }
+         else
+         {
+          count--;
+          j++;
+         }
+        }
+        return count;
+    }
+}
