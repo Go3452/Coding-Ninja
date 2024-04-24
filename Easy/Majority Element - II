@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.* ;
+
+import java.util.ArrayList;
+
+public class Solution 
+{
+    public static ArrayList<Integer> majorityElementII(ArrayList<Integer> arr) 
+    {
+     Collections.sort(arr);
+     ArrayList<Integer> ans = new ArrayList<Integer>();
+     int freq=1,num=arr.get(0),n=arr.size();
+     int m=n/3;
+     for(int i=1;i<n;i++)
+     {
+      if(num==arr.get(i))
+       freq++;
+      else
+      {
+        if(freq>m)
+         ans.add(num);
+        freq=1;
+        num=arr.get(i);
+      }
+     }
+     if(freq>m) ans.add(num);
+     return ans;
+    }
+}
