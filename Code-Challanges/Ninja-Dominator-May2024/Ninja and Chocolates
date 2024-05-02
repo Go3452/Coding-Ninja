@@ -1,0 +1,8 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    static int chocPrice(int n) {
+        int x=n/5;
+        return (n*10-x*48);
+    }
+}
