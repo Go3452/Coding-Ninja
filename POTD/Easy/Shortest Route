@@ -1,0 +1,60 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static String findShortestRoute(String str) {
+        int n=0,s=0,e=0,w=0;
+        int N=str.length();
+        for(int i=0;i<N;i++)
+        {
+         char ch=str.charAt(i);
+         if(ch=='E') e++;
+         else if(ch=='N') n++;
+         else if(ch=='W') w++;
+         else s++;
+        }
+        if(e>w)
+        {
+         e-=w;
+         w=0;
+        }
+        else
+        {
+         w-=e;
+         e=0;
+        }
+        if(n>s)
+        {
+         n-=s;
+         s=0;
+        }
+        else
+        {
+         s-=n;
+         n=0;
+        }
+        String ans="";
+        if(n==0&&s==0&&e==0&&w==0)
+         return ans;
+        if(e>0)
+        {
+         for(int i=0;i<e;i++)
+          ans+="E";
+        }
+        if(n>0)
+        {
+          for(int i=0;i<n;i++)
+          ans+="N";
+        }
+        if(s>0)
+        {
+          for(int i=0;i<s;i++)
+          ans+="S";
+        }
+        if(w>0)
+        {
+          for(int i=0;i<w;i++)
+          ans+="W";
+        }
+        return ans;
+    }
+}
