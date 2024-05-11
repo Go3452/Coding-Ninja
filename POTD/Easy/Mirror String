@@ -1,0 +1,20 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static Boolean isReflectionEqual(String s) {
+        int freq[] = new int[26];
+        for(int i=0;i<s.length();i++)
+         freq[s.charAt(i)-'A']++;
+        for(int i=0;i<26;i++)
+        {
+         if(i==0||i==7||i==8||i==12||i==14||i==19||i==20||i==21||i==22||i==23||i==24) continue;
+         if(freq[i]!=0) return false;
+        }
+        for(int i=0,j=s.length()-1;i<j;i++,j--)
+        {
+         if(s.charAt(i)!=s.charAt(j))
+          return false;
+        }
+        return true;
+    }
+}
