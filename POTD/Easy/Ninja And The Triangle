@@ -1,0 +1,13 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int ninjaAndTriangle(int n) {
+        int count=1,ans=0;
+        while(ans<=n)
+        {
+         ans=count*(count+1)/2;
+         count++;
+        }
+        return count-2;
+    }
+}
