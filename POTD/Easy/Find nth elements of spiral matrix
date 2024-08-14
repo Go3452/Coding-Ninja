@@ -1,0 +1,42 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+
+	public static int findKthElement(int[][] matrix, int k) {
+	    int n=matrix.length,m=matrix[0].length;
+		int count=0,ans=0;;
+		int leftcol=0,rightcol=m-1,toprow=0,bottomrow=n-1;
+		while(count!=k)
+		{
+		 for(int j=leftcol;count!=k&&j<=rightcol;j++)
+		 {
+		  count++;
+		  if(count==k)
+		   ans=matrix[toprow][j];
+		 }
+		 toprow++;
+		 for(int i=toprow;count!=k&&i<=bottomrow;i++)
+		 {
+		  count++;
+		  if(count==k)
+		   ans=matrix[i][rightcol];
+		 }
+		 rightcol--;
+		 for(int j=rightcol;count!=k&&j>=leftcol;j--)
+		 {
+		  count++;
+		  if(count==k)
+		   ans=matrix[bottomrow][j];
+		 }
+		 bottomrow--;
+		 for(int i=bottomrow;count!=k&&i>=toprow;i--)
+		 {
+		  count++;
+		  if(count==k)
+		   ans=matrix[i][leftcol];
+		 }
+		 leftcol++;
+		}
+		return ans;
+	}
+}
