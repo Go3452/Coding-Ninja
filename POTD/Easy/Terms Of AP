@@ -1,0 +1,21 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int[] termsOfAP(int x){
+		int []arr = new int[x];
+		int count=0,i=1;
+		while(true)
+		{
+		 if(count==x)
+		  break;
+		 int num=3*i+2;
+		 if(num%4!=0)
+		 {
+		  arr[count]=num;
+		  count++;
+		 }
+		 i++;
+		}
+		return arr;
+	}
+}
