@@ -1,0 +1,14 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    static int countOfDivisiblePairs(int n, int m){
+     int sum = 0;
+     for(int i=1;i<=n;i++)
+     {
+      sum += m/5;
+      sum += (i%5+m%5) >= 5 ?1:0;
+     }
+     return sum;
+    }
+
+}
